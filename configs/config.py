@@ -87,8 +87,8 @@ VPN = {
 #####################################(BIN)#####################################
 
 BIN = {
-		"mp4decrypt_moded": f"{dirPath}/bin/tools/mp4decrypt.exe",
-		"mp4dump": f"{dirPath}/bin/tools/mp4dump.exe",
+		"mp4decrypt_moded": f"{dirPath}/bin/tools/mp4decrypt",
+		"mp4dump": f"{dirPath}/bin/tools/mp4dump",
 		"ffmpeg": f"{dirPath}/bin/tools/ffmpeg.exe",
 		"ffprobe": f"{dirPath}/bin/tools/ffprobe.exe",
 		"MediaInfo": f"{dirPath}/bin/tools/MediaInfo.exe",
