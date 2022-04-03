@@ -1,0 +1,13 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.netflix.com	TRUE	/	FALSE	1649021298	flwssn	d6c632ff-6623-4ca0-b8cb-f71a06eba7c0
+.netflix.com	TRUE	/	FALSE	0	clSharedContext	6d497022-d3aa-49d3-a5eb-63597af966e2
+.netflix.com	TRUE	/	FALSE	1680546503	memclid	TkZDRENILUFQLUo0TFRURFhFNzFDOEhYR1YwRVVHSFZQNTZWMzU1Nw
+.netflix.com	TRUE	/	FALSE	1680546481	OptanonConsent	isIABGlobal=false&datestamp=Sun+Apr+03+2022+23%3A58%3A01+GMT%2B0530+(India+Standard+Time)&version=6.6.0&consentId=21094f75-4e20-41fc-ba6c-3d49f41cb15c&interactionCount=0&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1&hosts=H12%3A1%2CH13%3A1&AwaitingReconsent=false
+.netflix.com	TRUE	/	FALSE	1680546481	OptanonAlertBoxClosed	2022-04-03T18:28:01.856Z
+.netflix.com	TRUE	/	FALSE	1680546498	nfvdid	BQFmAAEBENg1qDI1TsyMsTv7eppDxKhgcXQd4M2Y7TDYuJthCZZQPHcpibjFq_eu6oXjBr-eWWyADIh2kIORn0rs9L6RQSN9pn0FDhgkWDzCQ7dSGx7Y9ya43iMvX9-pChMcJAbQ0vaLPwQ95PymzZ5hjM-g33yU
+.netflix.com	TRUE	/	TRUE	1680546498	SecureNetflixId	v%3D2%26mac%3DAQEAEQABABRq8wnZ_6r9s_LeTswWfXJZRhFhvZwSxxM.%26dt%3D1649010499304
+.netflix.com	TRUE	/	TRUE	1680546498	NetflixId	v%3D2%26ct%3DBQAOAAEBEExEqd0nuiMeL1iFLgCKaSqB4P9sb0s2qramb1t4D3-1JeSDmsGWQAfDc2848EGpTnr3v4npoiiRX9M9gfz-NMMp7F0VE6bvf9o1MZAyOBPDzE4Fo-peOOYfFlFKgaa-aDEk3kskAGu07bjOLfO_Oo14xhOshQiZbh6-3E8TE74Q8qH6RzZXGyKiZEViyGdnZenaDiFHDqI13aG8O-b4zlwrgs38TKfimx0EJws-8AFsx_kvYFVtdzwHPzNb62MvGKA-tNYLdzuPXpQnWDy6PFuX4-Vl7tAWQ-fHRVh9PDozEjwfKblmlUtmuUllx-TCLmSN2hllZyKDmtxcZyALc9yaNBWhVKXcK8TkaGlq9YvveI4a9W7OaIaFe9b9s5-XrlIbGhjjIF_nE6Ic9eaEKaAW9i8Cox69_TLp1lQjHyxvUR9SO-PDlhCkkbPqFUkNU8vbxh0B0FEwFFVCd9Yo_-DUshAMidHZm_iGbpxkLkM9hGHjwEkK7b70UIuv9UgE_ApK05hwMhWy6wnAjmbkgHxYImyPLiMhKzImj3mXn3nL8FUvLQ2wP1FzR36JZoVmsUf6XKBunSwYaQCZHV6w-kB4W_eWxVfwQJHaUQHkR7ZyrwleqlRtuiBAfB07YVg1pPUjt6lYPFyjXrwaYhado_7Vcw..%26bt%3Ddbl%26ch%3DAQEAEAABABQUVROe3Ea48kiM-JYPFUfXQqk5BdGoFBE.%26mac%3DAQEAEAABABTSPoV4lN8C2Jop2aZZaeeWQh8uUjML_wM.
+.www.netflix.com	TRUE	/	FALSE	0	cL	1649010500755%7C164901048073783486%7C164901048068464661%7C%7C4%7Cnull
