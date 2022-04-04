@@ -89,7 +89,7 @@ VPN = {
 BIN = {
 		"mp4decrypt_moded": f"{dirPath}/bin/tools/mp4decrypt",
 		"mp4dump": f"{dirPath}/bin/tools/mp4dump",
-		"ffmpeg": f"{dirPath}/bin/tools/ffmpeg.exe",
+		"ffmpeg": f"{dirPath}/ffmpeg-git-20220302-amd64-static",
 		"ffprobe": f"{dirPath}/bin/tools/ffprobe.exe",
 		"MediaInfo": f"{dirPath}/bin/tools/MediaInfo",
 		"mkvmerge": f"{dirPath}/bin/tools/mkvmerge",
