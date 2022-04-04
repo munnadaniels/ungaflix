@@ -1,3 +1,16 @@
+google-api-python-client>=1.7.11,<1.7.20
+google-auth-httplib2>=0.0.3,<0.1.0
+google-auth-oauthlib>=0.4.1,<0.10.0
+python-dotenv>=0.10
+tenacity>=6.0.0 
+python-magic
+streamlink
+youtube-dl
+git+https://github.com/yt-dlp/yt-dlp
+yt-dlp
+ffmpeg
+aria2p
+pydrive
 bs4
 colorama
 wcwidth
