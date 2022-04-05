@@ -91,7 +91,7 @@ BIN = {
 		"mp4dump": f"{dirPath}/bin/tools/mp4dump",
 		"ffmpeg": f"ffmpeg",
 		"ffprobe": f"{dirPath}/bin/tools/ffprobe.exe",
-		"MediaInfo": f"{dirPath}/bin/tools/MediaInfo",
+		"MediaInfo": f"{dirPath}/bin/tools/mediainfo",
 		"mkvmerge": f"{dirPath}/bin/tools/mkvmerge",
 		"aria2c": f"aria2c",
 	}
