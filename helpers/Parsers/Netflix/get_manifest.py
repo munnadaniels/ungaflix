@@ -47,18 +47,18 @@ def MSLprofiles():
 		},
 		"HIGH": {
 			"SD": [
-				"playready-h264hpl40-dash",
+				"playready-h264hpl22-dash",
 			],
 			"HD": [
-				"playready-h264hpl40-dash",
+				"playready-h264hpl30-dash",
 			],
 			"FHD": [
-				"playready-h264hpl40-dash",
+				"playready-h264hpl41-dash",
 			],
 			"ALL": [
-				"playready-h264hpl40-dash",
-				"playready-h264hpl40-dash",
-				"playready-h264hpl40-dash",
+				"playready-h264hpl41-dash",
+				"playready-h264hpl22-dash",
+				"playready-h264hpl30-dash",
 				"playready-h264hpl40-dash",
 			],
 		},
@@ -200,14 +200,14 @@ class get_manifest:
 			else:
 				if self.args.video_high:
 					if self.args.customquality:
-						if int(self.args.customquality[0]) == 1080:
+						if int(self.args.customquality[0]) == 720:
 							profiles += self.profiles["HIGH"]["FHD"]
 						elif (
-							int(self.args.customquality[0]) < 1080
-							and int(self.args.customquality[0]) >= 720
+							int(self.args.customquality[0]) < 720
+							and int(self.args.customquality[0]) >= 540
 						):
 							profiles += self.profiles["HIGH"]["HD"]
-						elif int(self.args.customquality[0]) < 720:
+						elif int(self.args.customquality[0]) < 540:
 							profiles += self.profiles["HIGH"]["SD"]
 					else:
 						profiles += self.profiles["HIGH"]["ALL"]
