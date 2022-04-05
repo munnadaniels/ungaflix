@@ -326,7 +326,7 @@ class get_manifest:
 		
 		self.logger.info("Getting High Profile Manifest...")
 		
-		profiles = self.profiles["BASICS"]
+		profiles = self.profiles["MAIN"]
 		
 		if self.args.customquality:
 			if int(self.args.customquality[0]) == 1080:
