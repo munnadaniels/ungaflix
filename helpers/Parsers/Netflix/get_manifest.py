@@ -56,10 +56,10 @@ def MSLprofiles():
 				"playready-h264hpl40-dash",
 			],
 			"ALL": [
-				"playready-h264hpl31-dash",
+				"playready-h264bpl40-dash",
 				"playready-h264hpl22-dash",
 				"playready-h264hpl30-dash",
-				"playready-h264hpl40-dash",
+				"playready-h264hpl31-dash",
 			],
 		},
 		"HEVC": {
