@@ -6,7 +6,7 @@ from datetime import datetime
 from services.netflix import netflix
 
 script_name = "NF Ripper"
-script_ver = "2.0.1.0"
+script_ver = "1.0.1.0"
 
 if __name__ == "__main__":
 
