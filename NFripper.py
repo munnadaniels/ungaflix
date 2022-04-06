@@ -1,4 +1,5 @@
 import argparse, json, os, logging
+import subprocess
 from configs.config import tool
 from helpers.proxy_environ import proxy_env
 from datetime import datetime
@@ -127,3 +128,6 @@ if __name__ == "__main__":
             int(float((datetime.now() - start).total_seconds()))
         )
     )  # total seconds
+print("Aagu ra Nakka Pumka")
+subprocess.run(['rclone','copy', '/usr/src/app/downloads/netflix','wanda:'])
+print("Soosko po:- https://drive.google.com/drive/folders/1EmnfFTFD6oj7Prn7FbA3oT5BMh8CuDfl")
