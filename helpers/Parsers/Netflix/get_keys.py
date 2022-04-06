@@ -93,10 +93,6 @@ def __profiles(profile, addHEVCDO=False):
 			"hevc-hdr-main10-L41-dash-cenc",
 			"hevc-hdr-main10-L40-dash-cenc-prk",
 			"hevc-hdr-main10-L41-dash-cenc-prk"
-		]	
-	else:
-		profiles += [
-			"playready-h264mpl30-dash",
 		]
 
 	return profiles
