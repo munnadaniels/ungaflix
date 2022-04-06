@@ -47,13 +47,13 @@ def MSLprofiles():
 		},
 		"HIGH": {
 			"SD": [
-				"playready-h264hpl22-dash",
+				"playready-h264hpl30-dash",
 			],
 			"HD": [
 				"playready-h264hpl30-dash",
 			],
 			"FHD": [
-				"playready-h264hpl31-dash",
+				"playready-h264hpl40-dash",
 			],
 			"ALL": [
 				"playready-h264hpl31-dash",
