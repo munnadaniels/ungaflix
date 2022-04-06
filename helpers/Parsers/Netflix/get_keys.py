@@ -47,7 +47,7 @@ def __profiles(profile, addHEVCDO=False):
 			"playready-h264hpl22-dash",
 			"playready-h264hpl30-dash",
 			"playready-h264hpl31-dash",
-			"playready-h264hpl40-dash"
+			"playready-h264hpl40-dash",
 		]
 	
 	elif profile == "Main KEYS":
