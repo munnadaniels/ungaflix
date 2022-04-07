@@ -97,7 +97,7 @@ def merge_content():
 	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def watermark():
-        FILENAME= str(args.output)
+        FILENAME= args.output
         output =  OUTPUT_PATH + '/' + f"{FILENAME}"
         os.system('ffmpeg -i %s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t,0,20)"' %FILENAME)
 
