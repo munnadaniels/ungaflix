@@ -13,6 +13,7 @@ import argparse
 FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
 TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
 OUTPUT_PATH = FILE_DIRECTORY+"/output"
+logos = FILE_DIRECTORY+"/logos"
 
 
 arguments = argparse.ArgumentParser()
@@ -94,6 +95,11 @@ def merge_content():
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
 	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+        divider()
+        FILENAME= arfs.output
+        output =  OUTPUT_PATH + '/' + f"{FILENAME}"
+        logo =  logos + '/' + f"{troop.png}"
+        os.system('ffmpeg -i output -i logo -filter_complex "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'" FILENAME
 
 def rclone():
     print("Uploading Gdrive..[Rclone]")
