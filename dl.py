@@ -99,7 +99,7 @@ def merge_content():
 def watermark():
         FILENAME= str(args.output)
         output =  OUTPUT_PATH + '/' + f"{FILENAME}"
-        os.system('ffmpeg -i %s/%s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:'enable=between(t,0,20)'" %s'%(OUTPUT_PATH,FILENAME,FILENAME))
+        os.system('ffmpeg -i %s/%s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'" %s'%(OUTPUT_PATH,FILENAME,FILENAME))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
