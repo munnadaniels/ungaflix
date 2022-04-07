@@ -100,7 +100,7 @@ def divider():
         FILENAME= arfs.output
         output =  OUTPUT_PATH + '/' + f"{FILENAME}"
         logo =  logos + '/' + f"{troop.png}"
-        os.system('ffmpeg -i output -i logo -filter_complex "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'" FILENAME copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+        os.system('ffmpeg -i output -i logo -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t,0,20)" FILENAME copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def rclone():
     print("Uploading Gdrive..[Rclone]")
