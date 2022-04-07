@@ -96,7 +96,7 @@ def merge_content():
 	time.sleep(2)
 	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
-def divider():
+def watermark():
         FILENAME= args.output
         output =  OUTPUT_PATH + '/' + f"{FILENAME}"
         os.system('ffmpeg -i %s/output -i %s/troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t,0,20)" FILENAME copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
@@ -116,6 +116,7 @@ KEY_PROMPT = str(args.key)
 download_drm_content(MPD_URL)
 decrypt_content()
 merge_content()
+watermark()
 rclone()
 divider()
 print("Drive Lo Dhenginchkundhi Choosko Jumka https://drive.google.com/drive/folders/1EmnfFTFD6oj7Prn7FbA3oT5BMh8CuDfl.")
