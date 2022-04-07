@@ -99,17 +99,17 @@ def merge_content():
 def watermark():
         FILENAME= args.output
         output =  OUTPUT_PATH + '/' + f"{FILENAME}"
-        os.system('ffmpeg -i output -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t,0,20)" FILENAME
+        os.system('ffmpeg -i output -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t,0,20)" FILENAME'
 
 def rclone():
-    print("Uploading Gdrive..[Rclone]")
+    print("Aagu Ra Nakka Pumka")
     FILENAME = args.output
     output =  OUTPUT_PATH + '/' + f"{FILENAME}"
     print(output)
     subprocess.run(['rclone','copy', output,'wanda:/Rclone'])
 
 divider()
-print("**** Widevine-DL by vank0n ****")
+print("**** Aagu Ra Nakka Pumka ****")
 divider()
 MPD_URL = str(args.mpd)
 KEY_PROMPT = str(args.key)
