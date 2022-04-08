@@ -1,4 +1,5 @@
 build:
-  procfile:
+  docker:
     worker: npm start
+
 
