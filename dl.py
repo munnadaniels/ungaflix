@@ -13,7 +13,7 @@ import argparse
 FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
 TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
 OUTPUT_PATH = FILE_DIRECTORY+"/output"
-LOGOS = FILE_DIRECTORY+"/logos"
+ENCODES = FILE_DIRECTORY+"/encodes"
 
 
 arguments = argparse.ArgumentParser()
@@ -65,9 +65,9 @@ def download_drm_content(mpd_url):
 	
 	divider()
 	print("Downloading Encrypted Video from CDN..")	
-	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s" --no-warnings --external-downloader --no-aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s"')
+	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s"')
 	print("Downloading Encrypted Audio from CDN..")
-	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader --no-aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
+	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
 
 
 def decrypt_content():
@@ -98,13 +98,12 @@ def merge_content():
 
 def watermark():
         FILENAME= str(args.output)
-        output =  OUTPUT_PATH + '/' + f"{FILENAME}"
-        os.system('ffmpeg -i %s/%s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25 enable=between(t\,0\,10)" %s'%(OUTPUT_PATH,FILENAME,FILENAME))
+        os.system('ffmpeg -i %s/%s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25 enable=between(t\,0\,10)" %s'%(OUTPUT_PATH,FILENAME,ENCODES,FILENAME))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
     FILENAME = args.output
-    output =  OUTPUT_PATH + '/' + f"{FILENAME}"
+    output =  ENCODES + '/' + f"{FILENAME}"
     print(output)
     subprocess.run(['rclone','copy', output,'wanda:/Rclone'])
 
