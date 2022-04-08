@@ -103,7 +103,7 @@ def watermark():
 def rclone():
     print("Aagu Ra Nakka Pumka")
     FILENAME = args.output
-    output =  ENCODES + '/' + f"{FILENAME}"
+    output =  OUTPUT_PATH + '/' + f"{FILENAME}"
     print(output)
     subprocess.run(['rclone','copy', output,'Rose:'])
 
