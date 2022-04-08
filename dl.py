@@ -94,11 +94,11 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -preset ultrafast -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def watermark():
         FILENAME= str(args.output)
-        os.system('ffmpeg -i %s/%s -i troop.png -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t\,0\,10)" %s/%s'%(OUTPUT_PATH,FILENAME,ENCODES,FILENAME))
+        os.system('ffmpeg -i %s/%s -i troop.png -preset ultrafast -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t\,0\,10)" %s/%s'%(OUTPUT_PATH,FILENAME,ENCODES,FILENAME))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
