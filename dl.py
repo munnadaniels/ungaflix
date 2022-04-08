@@ -105,7 +105,7 @@ def rclone():
     FILENAME = args.output
     output =  ENCODES + '/' + f"{FILENAME}"
     print(output)
-    subprocess.run(['rclone','copy', output,'wanda:/Rclone'])
+    subprocess.run(['rclone','copy', output,'Rose:/Rclone'])
 
 divider()
 print("**** Aagu Ra Nakka Pumka ****")
