@@ -1,1 +1,4 @@
-worker: npm start
+build:
+  procfile:
+    worker: npm start
+
