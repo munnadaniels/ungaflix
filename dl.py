@@ -118,7 +118,7 @@ merge_content()
 watermark()
 rclone()
 divider()
-print("Drive Lo Dhenginchkundhi Choosko Jumka https://drive.google.com/drive/folders/1EmnfFTFD6oj7Prn7FbA3oT5BMh8CuDfl.")
+print("SHAKTHI HERO THELUSA THAMMUDU NEEKU")
 divider()
 
 empty_folder(TEMPORARY_PATH)
