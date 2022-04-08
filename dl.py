@@ -21,6 +21,7 @@ arguments.add_argument("-l", "--mpd", dest="mpd", help="mpd link")
 arguments.add_argument("-k","--keys", dest="key",  help="key")
 arguments.add_argument("-o", "--output", dest="output", help="File Name")
 arguments.add_argument("--slang", dest="sublang", nargs="*", help="download only selected subtitle languages", default=[],)
+arguments.add_argument("--no-aria2c", dest="noaria2c", help="not use aria2c for download, will use python downloader.", action="store_true",)
 
 args = arguments.parse_args()
 
@@ -65,9 +66,9 @@ def download_drm_content(mpd_url):
 	
 	divider()
 	print("Downloading Encrypted Video from CDN..")	
-	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s"')
+	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s" --no-warnings --external-downloader --no-aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s"')
 	print("Downloading Encrypted Audio from CDN..")
-	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
+	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader --no-aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
 
 
 def decrypt_content():
