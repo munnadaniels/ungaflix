@@ -105,7 +105,7 @@ def rclone():
     FILENAME = args.output
     output =  ENCODES + '/' + f"{FILENAME}"
     print(output)
-    subprocess.run(['rclone','copy', output,'Rose:/Rclone'])
+    subprocess.run(['rclone','copy', output,'Rose:'])
 
 divider()
 print("**** Aagu Ra Nakka Pumka ****")
@@ -115,7 +115,6 @@ KEY_PROMPT = str(args.key)
 download_drm_content(MPD_URL)
 decrypt_content()
 merge_content()
-watermark()
 rclone()
 divider()
 print("SHAKTHI HERO THELUSA THAMMUDU NEEKU")
