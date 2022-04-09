@@ -93,12 +93,12 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -preset ultrafast -hide_banner -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system(f'ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -preset ultrafast -hide_banner -c:v copy -c:a copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def trackname():
         divider()
         FILENAME= str(args.output)
-        os.system('ffmpeg -i %s/%s -metadata:s:1 title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
+        os.system(f'ffmpeg -i %s/%s -hide_banner -metadata:s:1 title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
 
 def watermark():
         FILENAME= str(args.output)
