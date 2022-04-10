@@ -37,8 +37,6 @@ def empty_folder(folder):
 	files = glob.glob('%s/*'%folder)
 	for f in files:
 		os.remove(f)
-	print("Emptied Temporary Files!")
-	divider()
 	quit()
 	
 def extract_key (prompt):
@@ -98,7 +96,7 @@ def merge_content():
 def trackname():
         divider()
         FILENAME= str(args.output)
-        os.system('ffmpeg -i %s/%s -hide_banner -metadata title="TroopOriginals" -metadata:s:0 title="TroopOriginals" -metadata:s:1 title="TroopOriginals" -metadata:s:2 title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
+        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
 
 def watermark():
         FILENAME= str(args.output)
