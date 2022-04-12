@@ -118,7 +118,7 @@ divider()
 MPD_URL = str(args.mpd)
 KEY_PROMPT = str(args.key)
 download_drm_content(MPD_URL)
-
+subtitles()
 decrypt_content()
 merge_content()
 trackname()
