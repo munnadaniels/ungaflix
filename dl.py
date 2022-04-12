@@ -91,7 +91,7 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i decrypted_subs.en.vtt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.en.vtt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def trackname():
         divider()
@@ -104,7 +104,7 @@ def watermark():
 
 def subtitles(mpd_url):
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u -F "%s" -o decrypted_subs'%(mpd_url))
+    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(mpd_url,TEMPORARY_PATH))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
