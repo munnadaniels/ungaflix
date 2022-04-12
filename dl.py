@@ -101,9 +101,9 @@ def watermark():
         FILENAME= str(args.output)
         os.system('ffmpeg -i %s/%s -i troop.png -preset ultrafast -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t\,0\,10)" %s/%s'%(OUTPUT_PATH,FILENAME,ENCODES,FILENAME))
 
-def subtitles():
+def subtitles(mpd_url):
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "%s"-o %s/encrypted_subs'%(mpd_url,TEMPORARY_PATH))
+    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "{mpd_url}"-o %s/encrypted_subs'%(TEMPORARY_PATH))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
@@ -118,7 +118,7 @@ divider()
 MPD_URL = str(args.mpd)
 KEY_PROMPT = str(args.key)
 download_drm_content(MPD_URL)
-subtitles()
+subtitles(MPD_URL)
 decrypt_content()
 merge_content()
 trackname()
