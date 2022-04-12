@@ -14,6 +14,7 @@ FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
 TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
 OUTPUT_PATH = FILE_DIRECTORY+"/output"
 ENCODES = FILE_DIRECTORY+"/encodes"
+SUBTITLES = FILE_DIRECTORY+"/subtitles"
 
 
 arguments = argparse.ArgumentParser()
@@ -103,7 +104,7 @@ def watermark():
 
 def subtitles(mpd_url):
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "{mpd_url}"-o %s/encrypted_subs'%(TEMPORARY_PATH))
+    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "{mpd_url}"-o %s/decrypted_subs'%(SUBTITLES))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
