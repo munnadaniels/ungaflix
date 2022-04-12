@@ -65,8 +65,6 @@ def download_drm_content(mpd_url):
 	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_video.%(ext)s"')
 	print("Downloading Encrypted Audio from CDN..")
 	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
-        print("Downloading Subtitles")
-        os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "%s"-o %s/encrypted_subs.%(ext)s'%(TEMPORARY_PATH,encrypted_subs.%(ext)s)
 
 def decrypt_content():
 	extract_key(KEY_PROMPT)
@@ -92,7 +90,7 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.%(ext)s -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH, TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.en.vtt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH, TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def trackname():
         divider()
@@ -102,6 +100,10 @@ def trackname():
 def watermark():
         FILENAME= str(args.output)
         os.system('ffmpeg -i %s/%s -i troop.png -preset ultrafast -filter_complex "[0:v][1:v] overlay=25:25:enable=between(t\,0\,10)" %s/%s'%(OUTPUT_PATH,FILENAME,ENCODES,FILENAME))
+
+def subtitles():
+    print("Downloading Subtitles")
+    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "%s"-o %s/encrypted_subs'%(TEMPORARY_PATH)
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
@@ -116,6 +118,7 @@ divider()
 MPD_URL = str(args.mpd)
 KEY_PROMPT = str(args.key)
 download_drm_content(MPD_URL)
+
 decrypt_content()
 merge_content()
 trackname()
