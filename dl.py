@@ -104,7 +104,7 @@ def watermark():
 
 def subtitles(mpd_url):
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "{mpd_url}"-o decrypted_subs')
+    os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u -F "%s" -o decrypted_subs'%(mpd_url))
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
