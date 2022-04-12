@@ -66,7 +66,7 @@ def download_drm_content(mpd_url):
 	print("Downloading Encrypted Audio from CDN..")
 	os.system(f'yt-dlp -o "{TEMPORARY_PATH}/encrypted_audio.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {AUDIO_ID} "{mpd_url}"')
         print("Downloading Subtitles")
-        os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "{mpd_url}" -o "{TEMPORARY_PATH}/encrypted_subs.vtt"')
+        os.system(f'yt-dlp --write-subs --skip-download --external-downloader aria2c --verbose --allow-u "%s"-o %s/encrypted_subs.%(ext)s'%(TEMPORARY_PATH,encrypted_subs.%(ext)s)
 
 def decrypt_content():
 	extract_key(KEY_PROMPT)
@@ -92,7 +92,7 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.vtt-preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH, TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.%(ext)s -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/%s'%(TEMPORARY_PATH, TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def trackname():
         divider()
