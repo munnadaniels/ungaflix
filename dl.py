@@ -91,7 +91,7 @@ def merge_content():
 	divider()
 	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
 	time.sleep(2)
-	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.en.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s? copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
+	os.system('ffmpeg -i %s/decrypted_video.mp4 -i %s/decrypted_audio.m4a -i %s/decrypted_subs.en.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -map -0:s? copy %s/%s'%(TEMPORARY_PATH,TEMPORARY_PATH,TEMPORARY_PATH,OUTPUT_PATH,FILENAME))
 
 def trackname():
         divider()
