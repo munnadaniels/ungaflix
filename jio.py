@@ -26,8 +26,8 @@ def divider():
 
 def download_drm_content(mpd_url):
 	divider()
-        FILENAME= str(args.output)
-        LINK= str(args.mpd)
+    FILENAME= str(args.output)
+    LINK= str(args.mpd)
 	print("Processing Video Info..")
 	os.system('yt-dlp %s --allow-unplayable-formats --downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -o %s'%(LINK,FILENAME)
 
