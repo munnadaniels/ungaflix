@@ -29,4 +29,9 @@ def download_drm_content(mpd_url):
         FILENAME= str(args.output)
         LINK= str(args.mpd)
 	print("Processing Video Info..")
-	os.system('yt-dlp %s --allow-unplayable-formats --downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -o %s'%(LINK,FILENAME
+	os.system('yt-dlp %s --allow-unplayable-formats --downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -o %s'%(LINK,FILENAME)
+
+divider()
+print("**** Aagu Ra Nakka Pumka ****")
+divider()
+download_drm_content(MPD_URL)
