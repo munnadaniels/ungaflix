@@ -146,7 +146,7 @@ fileName = f'{content_name}.{metadata["year"]}.{TroopOriginals}.mp4'
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
-    print ("Downloading A/V")
+    print ("Shakthi Hero Ikkada")
     os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
     if args.res == 'low':
          os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', output)
@@ -159,16 +159,16 @@ def get_streams(m3u8):
     print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
-        output = OUTPUT_PATH + '/' + f"{fileName}"
-        encodes = ENCODES + '/' + f"{fileName}"
+        outputpath = OUTPUT_PATH + '/' + f"{fileName}"
+        encodespath = ENCODES + '/' + f"{fileName}"
         divider()
-        os.system('ffmpeg -i output -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv encodes'%(OUTPUT_PATH,OUTPUT_PATH))
+        os.system('ffmpeg -i outputpath -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv encodespath'%(OUTPUT_PATH,OUTPUT_PATH))
 
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
-    output =  ENCODES + '/' + f"{fileName}"
-    subprocess.run(['rclone','move', output,'Rose:'])
+    encodespath =  ENCODES + '/' + f"{fileName}"
+    subprocess.run(['rclone','move', encodespath,'Rose:'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
 
