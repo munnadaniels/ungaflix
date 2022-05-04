@@ -19,9 +19,6 @@ dirPath = os.path.dirname(realPath)
 dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 
- def divider():
-	print ('-' * shutil.get_terminal_size().columns)
-
 # define 
 def load_config():
     global ssotoken, uniqueID
@@ -100,6 +97,9 @@ def get_manifest(VideoID):
 def get_m3u8(manifest):
     m3u8 = manifest['m3u8']['high']
     return m3u8
+
+def divider():
+	print ('-' * shutil.get_terminal_size().columns)
 
 def mod_m3u8(url):
     mod = url.replace("jiovod.cdn.jio.com", "jiobeats.cdn.jio.com")
