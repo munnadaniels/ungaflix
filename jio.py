@@ -148,13 +148,13 @@ def get_streams(m3u8):
     print ("Downloading A/V")
     os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
     if args.res == 'low':
-         os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', OUTPUT_PATH/fileName)
+         os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', fileName)
     elif args.res == 'med':
-         os.rename(f'playlist_HD_TV_M [playlist_HD_TV_M].mp4', OUTPUT_PATH/fileName)
+         os.rename(f'playlist_HD_TV_M [playlist_HD_TV_M].mp4', fileName)
     elif args.res == 'high':
-         os.rename(f'playlist_HD_TV_H [playlist_HD_TV_H].mp4', OUTPUT_PATH/fileName)
+         os.rename(f'playlist_HD_TV_H [playlist_HD_TV_H].mp4', fileName)
     else:
-         os.rename(f'chunklist [chunklist].mp4', OUTPUT_PATH/fileName)
+         os.rename(f'chunklist [chunklist].mp4', fileName)
     print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
@@ -179,7 +179,7 @@ def download_drm_content(mpd_url):
 		VIDEO_ID = "bv"
 	divider()
 	print("Downloading Encrypted Video from CDN..")	
-	os.system(f'yt-dlp -o "{fileName}.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{m3u8}" -o "{fileName}.%(ext)s"')'''
+	os.system(f'yt-dlp -o "{%s/fileName}.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{m3u8}" -o "{fileName}.%(ext)s"')'''%(OUTPUT_PATH)
 	
 divider()
 m3u8_url = get_m3u8(manifest)
