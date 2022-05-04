@@ -147,7 +147,7 @@ def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
-    os.system('yt-dlp %s --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings')%{m3u8} # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
+    os.system('yt-dlp "%s" --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings'%m3u8) # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
     if args.res == 'low':
          os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', output)
     elif args.res == 'med':
