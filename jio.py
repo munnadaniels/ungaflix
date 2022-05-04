@@ -144,7 +144,7 @@ fileName = f'{content_name}.{metadata["year"]}.{Jack}.mp4'
 def get_streams(m3u8):
     print(f'link: {m3u8}') 
     print ("Downloading A/V")
-    os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --downloader aria2c --show-progress --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outPath}
+    os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outPath}
     if args.res == 'low':
          os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', fileName)
     elif args.res == 'med':
