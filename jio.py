@@ -155,13 +155,12 @@ def get_streams(m3u8):
 
 def trackname():
         divider()
-        FILENAME= str(args.output)
-        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
+        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,fileName,OUTPUT_PATH,OUTPUT_PATH,ENCODES,fileName))
 
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
-    output = f"{fileName}"
+    output =  ENCODES + '/' + f"{fileName}"
     subprocess.run(['rclone','move', output,'Rose:'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
