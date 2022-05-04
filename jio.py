@@ -184,8 +184,8 @@ def download_drm_content(mpd_url):
 
 m3u8_url = get_m3u8(manifest)
 nonDRM_m3u8_url = mod_m3u8(m3u8_url)
-divider()
 get_streams(nonDRM_m3u8_url)
+divider()
 trackname()
 rclone()
 
