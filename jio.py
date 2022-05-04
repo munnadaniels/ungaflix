@@ -140,7 +140,7 @@ except KeyError:
     sys.exit()
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = f'{content_name}.{metadata["year"]}.{Troop}.mp4'
+fileName = f'{content_name}.{metadata["year"]}.{Troop}.mkv'
 
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"{fileName}"
