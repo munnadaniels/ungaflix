@@ -1,7 +1,10 @@
 import requests, json
 import os, sys
 import argparse
-import shutil
+import subprocess
+
+#import shutil
+
 
 # define paths
 currentFile = __file__
@@ -10,8 +13,8 @@ dirPath = os.path.dirname(realPath)
 dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 
-def divider():
-	print ('-' * shutil.get_terminal_size().columns)
+'''def divider():
+	print ('-' * shutil.get_terminal_size().columns)'''
 # define 
 def load_config():
     global ssotoken, uniqueID
@@ -146,6 +149,12 @@ def get_streams(m3u8):
          os.rename(f'chunklist [chunklist].mp4', fileName)
     print ("\nSuccessfully downloaded the stream!") 
 
+def rclone():
+    print("Aagu Ra Nakka Pumka")
+    output = f"{fileName}"
+    subprocess.run(['rclone','move', output,'Rose:/webdl'])
+    print("seach in drive :- https://drive.google.com/drive/u/0/folders/1fTLc6LSBZ2txSgeMy2xgKgYcJu4iyc1Y") 
+
 '''def get_streams(m3u8):
 def download_drm_content(mpd_url):
 	divider()
@@ -162,3 +171,5 @@ def download_drm_content(mpd_url):
 m3u8_url = get_m3u8(manifest)
 nonDRM_m3u8_url = mod_m3u8(m3u8_url)
 get_streams(nonDRM_m3u8_url)
+rclone()
+
