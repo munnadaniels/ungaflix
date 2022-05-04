@@ -129,7 +129,7 @@ arguments.add_argument("-id", "--id", dest="id", help="content id ")
 arguments.add_argument("-q", "--quality", dest="res", help="quality") 
 args = arguments.parse_args()
 VideoID = args.id
-Jack = args.res
+TroopOriginals = args.res
 manifest = get_manifest(VideoID)
 metadata = get_metadata(VideoID)
 try:
@@ -139,7 +139,7 @@ except KeyError:
     sys.exit()
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = f'{content_name}.{metadata["year"]}.{wanda}.mp4'
+fileName = f'{content_name}.{metadata["year"]}.{TroopOriginals}.mp4'
 
 def get_streams(m3u8):
     print(f'link: {m3u8}') 
