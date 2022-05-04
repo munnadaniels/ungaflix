@@ -144,7 +144,7 @@ fileName = f'{content_name}.{metadata["year"]}.{TroopOriginals}.mp4'
 def get_streams(m3u8):
     print(f'link: {m3u8}') 
     print ("Downloading A/V")
-    os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{OUTPUT_PATH/fileName}
+    os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{OUTPUT_PATH/fileName}
     if args.res == 'low':
          os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', fileName)
     elif args.res == 'med':
@@ -182,6 +182,7 @@ def download_drm_content(mpd_url):
 m3u8_url = get_m3u8(manifest)
 nonDRM_m3u8_url = mod_m3u8(m3u8_url)
 get_streams(nonDRM_m3u8_url)
+divider()
 trackname()
 rclone()
 
