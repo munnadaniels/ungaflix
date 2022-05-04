@@ -19,7 +19,7 @@ dirPath = os.path.dirname(realPath)
 dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 
-'''def divider():
+ def divider():
 	print ('-' * shutil.get_terminal_size().columns)'''
 # define 
 def load_config():
