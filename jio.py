@@ -20,7 +20,8 @@ dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 
  def divider():
-	print ('-' * shutil.get_terminal_size().columns)'''
+	print ('-' * shutil.get_terminal_size().columns)
+
 # define 
 def load_config():
     global ssotoken, uniqueID
