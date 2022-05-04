@@ -120,7 +120,6 @@ def get_metadata(VideoID):
     response = requests.get (url= Meta_URL + VideoID)
     return json.loads(response.text)
 
-print ('JioCinema Content Downloading Tool')
 load_config()
 if ssotoken == "" and uniqueID == "":
     M_No = input ('Enter Mobile Number: ')
@@ -131,7 +130,7 @@ arguments.add_argument("-id", "--id", dest="id", help="content id ")
 arguments.add_argument("-q", "--quality", dest="res", help="quality") 
 args = arguments.parse_args()
 VideoID = args.id
-TroopOriginals = args.res
+Troop = args.res
 manifest = get_manifest(VideoID)
 metadata = get_metadata(VideoID)
 try:
@@ -141,15 +140,15 @@ except KeyError:
     sys.exit()
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = f'{content_name}.{metadata["year"]}.{TroopOriginals}.mp4'
+fileName = f'{content_name}.{metadata["year"]}.{Troop}.mp4'
 
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
-    os.system('yt-dlp "%s" --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings'%m3u8) # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
+    os.system(f'{ytdlp_path} {m3u8} --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
     if args.res == 'low':
-         os.rename('playlist_HD_TV_L [playlist_HD_TV_L].mp4', output)
+         os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', output)
     elif args.res == 'med':
          os.rename(f'playlist_HD_TV_M [playlist_HD_TV_M].mp4', output)
     elif args.res == 'high':
