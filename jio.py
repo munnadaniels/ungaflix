@@ -159,8 +159,10 @@ def get_streams(m3u8):
     print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
+        output = OUTPUT_PATH + '/' + f"{fileName}"
+        encodes = ENCODES + '/' + f"{fileName}"
         divider()
-        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,fileName,OUTPUT_PATH,OUTPUT_PATH,ENCODES,fileName))
+        os.system('ffmpeg -i output -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv encodes'%(OUTPUT_PATH,OUTPUT_PATH))
 
 
 def rclone():
