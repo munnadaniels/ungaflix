@@ -162,7 +162,7 @@ def trackname():
         outputpath = OUTPUT_PATH + '/' + f"{fileName}"
         encodespath = ENCODES + '/' + f"{fileName}"
         divider()
-        os.system('ffmpeg -i outputpath -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv encodespath'%(OUTPUT_PATH,OUTPUT_PATH))
+        os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
 
 
 def rclone():
