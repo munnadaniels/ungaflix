@@ -168,19 +168,6 @@ def rclone():
     subprocess.run(['rclone','move', output,'Rose:'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
-'''def get_streams(m3u8):
-def download_drm_content(mpd_url):
-	divider()
-	print("Processing Video Info..")
-	os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
-	divider()
-	VIDEO_ID = input("ENTER VIDEO_ID (Press Enter for Best): ")
-	if VIDEO_ID == "":
-		VIDEO_ID = "bv"
-	divider()
-	print("Downloading Encrypted Video from CDN..")	
-	os.system(f'yt-dlp -o "{%s/fileName}.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{m3u8}" -o "{fileName}.%(ext)s"')'''%(OUTPUT_PATH)
-	
 
 m3u8_url = get_m3u8(manifest)
 nonDRM_m3u8_url = mod_m3u8(m3u8_url)
