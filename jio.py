@@ -5,6 +5,10 @@ import subprocess
 
 #import shutil
 
+FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
+TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
+OUTPUT_PATH = FILE_DIRECTORY+"/output"
+
 
 # define paths
 currentFile = __file__
@@ -146,14 +150,20 @@ def get_streams(m3u8):
     elif args.res == 'high':
          os.rename(f'playlist_HD_TV_H [playlist_HD_TV_H].mp4', fileName)
     else:
-         os.rename(f'chunklist [chunklist].mp4', fileName)
+         os.rename(f'chunklist [chunklist].mp4', OUTPUT_PATH/fileName)
     print ("\nSuccessfully downloaded the stream!") 
+
+def trackname():
+        divider()
+        FILENAME= str(args.output)
+        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
+
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
     output = f"{fileName}"
-    subprocess.run(['rclone','move', output,'Rose:/webdl'])
-    print("seach in drive :- https://drive.google.com/drive/u/0/folders/1fTLc6LSBZ2txSgeMy2xgKgYcJu4iyc1Y") 
+    subprocess.run(['rclone','move', output,'Rose:'])
+    print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
 '''def get_streams(m3u8):
 def download_drm_content(mpd_url):
