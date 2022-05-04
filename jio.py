@@ -180,10 +180,10 @@ def download_drm_content(mpd_url):
 	print("Downloading Encrypted Video from CDN..")	
 	os.system(f'yt-dlp -o "{fileName}.%(ext)s" --no-warnings --external-downloader aria2c --allow-unplayable-formats --no-check-certificate -f {VIDEO_ID} "{m3u8}" -o "{fileName}.%(ext)s"')'''
 	
+divider()
 m3u8_url = get_m3u8(manifest)
 nonDRM_m3u8_url = mod_m3u8(m3u8_url)
 get_streams(nonDRM_m3u8_url)
-divider()
 trackname()
 rclone()
 
