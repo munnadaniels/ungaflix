@@ -138,7 +138,7 @@ try:
 except KeyError:
     print ("Incorrect/Malformed VideoID")
     sys.exit()
-print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]} | {metadata["width"]}')
+print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
 fileName = (f'{content_name}.{metadata["year"]}.{Troop}.mp4')
 
