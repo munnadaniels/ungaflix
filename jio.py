@@ -140,7 +140,7 @@ except KeyError:
     sys.exit()
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = f'{content_name}.{metadata["year"]}.{Troop}.mp4'
+fileName = (f'{content_name}.{metadata["year"]}.{Troop}.mp4')
 
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"{fileName}"
@@ -161,7 +161,7 @@ def trackname():
         outputpath = OUTPUT_PATH + '/' + f"{fileName}"
         encodespath = ENCODES + '/' + f"{fileName}"
         divider()
-        os.system('ffmpeg -i '%s' -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
+        os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
 
 
 def rclone():
