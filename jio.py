@@ -19,147 +19,43 @@ dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 filedir=str(pathlib.Path(__file__).parent.absolute())
 outputpath = filedir+"/output"
-
-# define 
-def load_config():
-    global ssotoken, uniqueID
-    with open ("creds.txt", "r") as f:
-        try:
-            Creds = json.load(f)
-            ssotoken = Creds['ssotoken']
-            uniqueID = Creds['uniqueID']
-        except json.JSONDecodeError:
-            ssotoken = ''
-            uniqueID = ''    
-
-Request_URL = "https://prod.media.jio.com/apis/common/v3/playbackrights/get/"
-Meta_URL = "https://prod.media.jio.com/apis/common/v3/metamore/get/"
-#cachePath = 
-#outPath = 
-OTPSendURL = "https://prod.media.jio.com/apis/common/v3/login/sendotp"
-OTPVerifyURL = "https://prod.media.jio.com/apis/common/v3/login/verifyotp"
-
-def login(mobile_number):
-    send = requests.post(url = OTPSendURL, headers = {
-    'authority': 'prod.media.jio.com',
-    'pragma': 'no-cache',
-    'cache-control': 'no-cache',
-    'origin': 'https://www.jiocinema.com',
-    'referer': 'https://www.jiocinema.com/',
-    },
-     data = '{"number":"+91' + mobile_number +'"}'
-    )
-    if 'success' in str(send.content):
-        OTP = input ('Enter OTP Received: ')
-        verify = requests.post(url = OTPVerifyURL, headers = {
-        'authority': 'prod.media.jio.com',
-        'pragma': 'no-cache',
-        'origin': 'https://www.jiocinema.com',
-        'referer': 'https://www.jiocinema.com/',
-        'deviceid': '1727391720'
-        },
-        data = '{"number":"+91' + mobile_number + '","otp":"' + OTP + '"}')
-        creds = json.loads(verify.content)
-        print (creds)
-        load_creds(creds)
-    else:
-        print ("Wrong/Unregistered Mobile Number (ensure there's no +91 or 0 in the beginning)")
-        sys.exit()
-
-def load_creds(creds):
-    try:
-        ssotoken = creds['ssoToken']
-        uniqueID = creds['uniqueId']
-    except KeyError:
-        print ("Wrong OTP, Try again!")
-        sys.exit()
-    Creds = {
-        "ssotoken" : ssotoken,
-        "uniqueID" : uniqueID
-    }
-    with open("creds.txt", "w") as f:
-        f.write(json.dumps(Creds))
-
-def get_manifest(VideoID):
-    headers = {
-    'authority': 'prod.media.jio.com',
-    'pragma': 'no-cache',
-    'ssotoken': ssotoken,
-    'bitrates': 'true',
-    'os': 'Android',
-    'user-agent': 'JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio',
-    'content-type': 'application/json',
-    'accept': 'application/json, text/plain, */*',
-    'devicetype': 'tv',
-    }
-    response = requests.post(url = Request_URL + VideoID , data = '{"uniqueId":"' + uniqueID + '"}' , headers = headers)
-    return json.loads(response.text)
-
-def get_m3u8(manifest):
-    m3u8 = manifest['m3u8']['high']
-    return m3u8
-
+ 
 def divider():
 	print ('-' * shutil.get_terminal_size().columns)
 
-def mod_m3u8(url):
-    mod = url.replace("jiovod.cdn.jio.com", "jiobeats.cdn.jio.com")
-    lst = mod.split("/")
-    if args.res == 'low':
-         lst[-1] = "playlist_HD_TV_L.m3u8"
-    elif args.res == 'med':
-         lst[-1] = "playlist_HD_TV_M.m3u8"
-    elif args.res == 'high':
-         lst[-1] = "playlist_HD_TV_H.m3u8"
-    else:
-         lst[-1] = "chunklist.m3u8"
-    mod = "/".join(lst)
-    return mod
-
-def get_metadata(VideoID):
-    response = requests.get (url= Meta_URL + VideoID)
-    return json.loads(response.text)
-
-load_config()
-if ssotoken == "" and uniqueID == "":
-    M_No = input ('Enter Mobile Number: ')
-    login (M_No)
-    load_config()
+Request_URL = "https://prod.media.jio.com/apis/common/v3/playbackrights/get/"
+Meta_URL = "https://prod.media.jio.com/apis/common/v3/metamore/get/"
+First = "https://jiobeats.cdn.jio.com/vod/_definst_/smil:"
+Second = ".smil/chunklist.m3u8"
 arguments = argparse.ArgumentParser()
 arguments.add_argument("-id", "--id", dest="id", help="content id ")
-arguments.add_argument("-q", "--quality", dest="res", help="quality") 
+arguments.add_argument("-o", "--quality", dest="res", help="quality") 
 args = arguments.parse_args()
 VideoID = args.id
-Troop = args.res
-manifest = get_manifest(VideoID)
-metadata = get_metadata(VideoID)
-try:
-    content_name = metadata['name']
-except KeyError:
-    print ("Incorrect/Malformed VideoID")
-    sys.exit()
-print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
-# print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = (f'{content_name}.{metadata["year"]}.{Troop}.mp4')
+fileName = args.res
 
-def get_streams(m3u8):
+
+def get_metadata(VideoID):
+    url = Meta_URL + VideoID
+    print(url) 
+    test = input ('Enter thumb: ')
+    m3u8 = First + test + Second
     output = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
-    os.system(f'{ytdl_path} {m3u8} --allow-unplayable-formats --external-downloader aria2c --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2) Jio" -q --no-warnings') # + -P TEMP:{cachePath} -P HOME:{outputpath/fileName}
-    if args.res == 'low':
-         os.rename(f'playlist_HD_TV_L [playlist_HD_TV_L].mp4', output)
-    elif args.res == 'med':
-         os.rename(f'playlist_HD_TV_M [playlist_HD_TV_M].mp4', output)
-    elif args.res == 'high':
-         os.rename(f'playlist_HD_TV_H [playlist_HD_TV_H].mp4', output)
-    else:
-         os.rename(f'chunklist [chunklist].mp4', fileName)
-    print ("\nSuccessfully downloaded the stream!") 
+    os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
+    divider()
+    VIDEO_ID = input("ENTER VIDEO_ID (Press Enter for Best): ")
+    if VIDEO_ID == "":
+           AUDIO_ID = "ba"
+    divider()
+    os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
+    os.rename(f'chunklist [chunklist].mp4', output)
+    #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
-        outputpath = OUTPUT_PATH + '/' + f"'{fileName}'"
-        encodespath = ENCODES + '/' + f"'{fileName}'"
+        outputpath = OUTPUT_PATH + '/' + f"{fileName}"
+        encodespath = ENCODES + '/' + f"{fileName}"
         divider()
         os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
 
@@ -171,10 +67,7 @@ def rclone():
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
 
-m3u8_url = get_m3u8(manifest)
-nonDRM_m3u8_url = mod_m3u8(m3u8_url)
-get_streams(nonDRM_m3u8_url)
+get_metadata(VideoID)
 divider()
 trackname()
 rclone()
-
