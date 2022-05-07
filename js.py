@@ -40,7 +40,7 @@ def get_metadata(VideoID):
     print(url) 
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
-    output = OUTPUT_PATH + '/' + f"{fileName}"
+    outputt = TEMPORARY_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -50,8 +50,22 @@ def get_metadata(VideoID):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'chunklist [chunklist].mp4', output)
+    os.rename(f'chunklist [chunklist].mp4', outputt)
     #print ("\nSuccessfully downloaded the stream!") 
+
+def subtitles(m3u8):
+    print("Downloading Subtitles")
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "{m3u8}" -o %s/decrypted_subs'%(mpd_url,OUTPUT_PATH))
+
+def merge_content():
+	divider()
+	outputt = TEMPORARY_PATH + '/' + f"{fileName}"
+	divider()
+	print("Merging Files and Processing %s.. (Takes a while)"%FILENAME)
+	time.sleep(2)
+	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s/{fileName}'%(output,OUTPUT_PATH,OUTPUT_PATH))
+
+
 
 def trackname():
         outputpath = OUTPUT_PATH + '/' + f"{fileName}"
@@ -69,5 +83,7 @@ def rclone():
 
 get_metadata(VideoID)
 divider()
+subtitles(m3u8)
+merge_content()
 trackname()
 rclone()
