@@ -54,8 +54,9 @@ def get_metadata(VideoID):
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
+    m3u8 = First + test + Second
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "{m3u8}" -o %s/decrypted_subs'%(OUTPUT_PATH))
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
 
 def merge_content():
 	divider()
