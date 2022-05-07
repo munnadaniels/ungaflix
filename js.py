@@ -18,7 +18,6 @@ dirPath = os.path.dirname(realPath)
 dirName = os.path.basename(dirPath)
 ytdl_path = "yt-dlp"
 filedir=str(pathlib.Path(__file__).parent.absolute())
-outputpath = filedir+"/output"
  
 def divider():
 	print ('-' * shutil.get_terminal_size().columns)
