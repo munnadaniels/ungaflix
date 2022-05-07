@@ -40,6 +40,8 @@ def get_metadata(VideoID):
     print(url) 
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
+    print("Downloading Subtitles")
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
     accountss = ACCOUNT + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
@@ -54,6 +56,7 @@ def get_metadata(VideoID):
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
+    test = input ('Enter thumb: ')
     m3u8 = First + test + Second
     print("Downloading Subtitles")
     os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
