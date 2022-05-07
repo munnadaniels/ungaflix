@@ -6,9 +6,9 @@ import pathlib
 import shutil
 
 FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
-TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
-OUTPUT_PATH = FILE_DIRECTORY+"/output"
-ENCODES = FILE_DIRECTORY+"/encodes"
+TEMPORARY_PATH = FILE_DIRECTORY+"ungaflix/cache"
+OUTPUT_PATH = FILE_DIRECTORY+"ungaflix/output"
+ENCODES = FILE_DIRECTORY+"ungaflix/encodes"
 
 
 # define paths
@@ -148,7 +148,7 @@ def get_streams(m3u8):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'%s', output''%(ungak))
+    os.rename(f'{unga}', output)
     #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
