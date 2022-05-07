@@ -6,9 +6,9 @@ import pathlib
 import shutil
 
 FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
-TEMPORARY_PATH = FILE_DIRECTORY+"cache"
-OUTPUT_PATH = FILE_DIRECTORY+"output"
-ENCODES = FILE_DIRECTORY+"encodes"
+TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
+OUTPUT_PATH = FILE_DIRECTORY+"/output"
+ENCODES = FILE_DIRECTORY+"/encodes"
 
 
 # define paths
