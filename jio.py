@@ -148,7 +148,7 @@ def get_streams(m3u8):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'ungak', output)
+    os.rename(f'%s', output''%ungak))
     #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
