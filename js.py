@@ -60,7 +60,7 @@ def subtitles(m3u8):
 def merge_content():
 	divider()
 	outputt = TEMPORARY_PATH + '/' + f"{fileName}"
-        outputpath = OUTPUT_PATH + '/' + f"{fileName}"
+outputpath = OUTPUT_PATH + '/' + f"{fileName}"
 	divider()
 	print("Merging Files and Processing..")
 	time.sleep(2)
