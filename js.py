@@ -60,8 +60,7 @@ def subtitles(m3u8):
 def merge_content():
 	divider()
 	outputt = TEMPORARY_PATH + '/' + f"{fileName}"
-outputpath = OUTPUT_PATH + '/' + f"{fileName}"
-	divider()
+	outputpath = OUTPUT_PATH + '/' + f"{fileName}"
 	print("Merging Files and Processing..")
 	time.sleep(2)
 	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(output,OUTPUT_PATH,outputpath))
