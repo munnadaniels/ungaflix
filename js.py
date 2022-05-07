@@ -9,6 +9,7 @@ FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
 TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
 OUTPUT_PATH = FILE_DIRECTORY+"/output"
 ENCODES = FILE_DIRECTORY+"/encodes"
+ACCOUNT = FILE_DIRECTORY+"/accounts"
 
 
 # define paths
@@ -58,11 +59,11 @@ def subtitles(m3u8):
 
 def merge_content():
 	divider()
-	outputt = TEMPORARY_PATH + '/' + f"{fileName}"
+	accounts = ACCOUNT + '/' + f"{fileName}"
 	outputpath = OUTPUT_PATH + '/' + f"{fileName}"
 	print("Merging Files and Processing..")
 	time.sleep(2)
-	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(output,OUTPUT_PATH,outputpath))
+	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(accountss,OUTPUT_PATH,outputpath))
 
 
 
