@@ -134,7 +134,7 @@ except KeyError:
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
 fileName = f'{content_name}.{metadata["year"]}.{metadata["language"]}.AAC.x264.{Troop}.mp4'
-unga = f'chunllist [chunklist].mp4'
+unga = f'chunklist [chunklist].mp4'
 
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"'{fileName}'"
