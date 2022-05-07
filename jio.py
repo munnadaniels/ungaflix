@@ -134,6 +134,7 @@ except KeyError:
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
 fileName = f'{content_name}.{metadata["year"]}.{metadata["language"]}.AAC.x264.{Troop}.mp4'
+unga = f'chunllist [chunklist].mp4'
 
 def get_streams(m3u8):
     output = OUTPUT_PATH + '/' + f"'{fileName}'"
@@ -146,7 +147,7 @@ def get_streams(m3u8):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'{'chunklist [chunklist].mp4'}', output)
+    os.rename(f'{unga}', output)
     #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
