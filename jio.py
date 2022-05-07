@@ -136,7 +136,7 @@ print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"
 fileName = f'{content_name}.{metadata["year"]}.{metadata["language"]}.AAC.x264.{Troop}.mp4'
 
 def get_streams(m3u8):
-    output = OUTPUT_PATH + '/' + f"{fileName}"
+    output = OUTPUT_PATH + '/' + f"'{fileName}'"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -158,7 +158,7 @@ def trackname():
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
-    encodespath =  ENCODES + '/' + f"{fileName}"
+    encodespath =  ENCODES + '/' + f"'{fileName}'"
     subprocess.run(['rclone','move', encodespath,'Rose:/jio'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU https://drive.google.com/drive/folders/1HGFtdd5xZ4Obo11HCaphApRmqmFTbp4A?usp=sharing") 
 
