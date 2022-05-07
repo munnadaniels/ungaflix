@@ -83,7 +83,7 @@ def rclone():
 
 get_metadata(VideoID)
 divider()
-subtitles(m3u8)
+subtitles()
 merge_content()
 trackname()
 rclone()
