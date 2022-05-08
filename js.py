@@ -4,6 +4,7 @@ import argparse
 import subprocess
 import pathlib
 import shutil
+import time
 
 FILE_DIRECTORY=str(pathlib.Path(__file__).parent.absolute())
 TEMPORARY_PATH = FILE_DIRECTORY+"/cache"
@@ -40,8 +41,6 @@ def get_metadata(VideoID):
     print(url) 
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
-    print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
     accountss = ACCOUNT + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
@@ -53,6 +52,8 @@ def get_metadata(VideoID):
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
     os.rename(f'chunklist [chunklist].mp4', accountss)
+    print("Downloading Subtitles")
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
