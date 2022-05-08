@@ -120,6 +120,7 @@ if ssotoken == "" and uniqueID == "":
 arguments = argparse.ArgumentParser()
 arguments.add_argument("-id", "--id", dest="id", help="content id ")
 arguments.add_argument("-q", "--quality", dest="res", help="quality") 
+arguments.add_argument("-o", "--output", dest="output", help="file")
 args = arguments.parse_args()
 VideoID = args.id
 Troop = args.res
