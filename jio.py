@@ -158,8 +158,8 @@ def trackname():
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
-    encodespath =  ENCODES + '/' + f"{fileName}"
-    subprocess.run(['rclone','move', 'encodespath','wanda:troopdrive/jio'])
+    encodespath =  ENCODES + '/' + f"'{fileName}'"
+    subprocess.run(['rclone','move', encodespath,'wanda:troopdrive/jio'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
 
