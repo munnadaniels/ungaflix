@@ -138,8 +138,6 @@ unga = f'chunklist [chunklist].mp4'
 
 def get_streams(m3u8):
     thatha = OUTPUT_PATH + '/' + f"'{fileName}'"
-    ungak = f"'{unga}'"
-    unga = f'chunklist [chunklist].mp4'
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
