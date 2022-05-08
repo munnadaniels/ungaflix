@@ -138,6 +138,7 @@ unga = f'chunklist [chunklist].mp4'
 def get_streams(m3u8):
     thatha = OUTPUT_PATH + '/' + f"'{fileName}'"
     ungak = f"'{unga}'"
+    unga = f'chunklist [chunklist].mp4'
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -146,8 +147,8 @@ def get_streams(m3u8):
     if VIDEO_ID == "":
            AUDIO_ID = "ba"
     divider()
-    os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'{unga}', thatha)
+    os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}" -o thelidhu.mp4')
+    os.rename(f'thelidhu.mp4', thatha)
     #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
