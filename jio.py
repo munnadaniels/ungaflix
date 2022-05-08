@@ -133,11 +133,10 @@ except KeyError:
     sys.exit()
 print (f'Downloading: {content_name} | {metadata["year"]} | {metadata["language"]}')
 # print (f'Subtitles available: {metadata["subtitle"]}')    
-fileName = f'{content_name}.{metadata["year"]}.{metadata["language"]}.AAC.x264.{Troop}.mp4'
-unga = f'chunklist [chunklist].mp4'
+fileName = f'{Troop}.mkv'
 
 def get_streams(m3u8):
-    thatha = OUTPUT_PATH + '/' + f"'{fileName}'"
+    thatha = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -150,15 +149,15 @@ def get_streams(m3u8):
     #print ("\nSuccessfully downloaded the stream!") 
 
 def trackname():
-        thatha = OUTPUT_PATH + '/' + f"'{fileName}'"
-        encodespath = ENCODES + '/' + f"'{fileName}'"
+        thatha = OUTPUT_PATH + '/' + f"{fileName}"
+        encodespath = ENCODES + '/' + f"{fileName}"
         divider()
         os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(thatha,OUTPUT_PATH,OUTPUT_PATH,encodespath))
 
 
 def rclone():
     print("Aagu Ra Nakka Pumka")
-    encodespath =  ENCODES + '/' + f"'{fileName}'"
+    encodespath =  ENCODES + '/' + f"{fileName}"
     subprocess.run(['rclone','move', encodespath,'wanda:troopdrive/jio'])
     print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
