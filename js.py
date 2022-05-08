@@ -51,8 +51,8 @@ def get_metadata(VideoID):
     if VIDEO_ID == "":
            AUDIO_ID = "ba"
     divider()
-    os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'chunklist [chunklist].mp4', outputpath)
+    os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}" -o thelidhu.mp4')
+    os.rename(f'thelidhu.mp4', outputpath)
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
