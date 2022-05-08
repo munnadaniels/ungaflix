@@ -30,8 +30,8 @@ First = "https://jiobeats.cdn.jio.com/vod/_definst_/smil:"
 Second = ".smil/chunklist.m3u8"
 arguments = argparse.ArgumentParser()
 arguments.add_argument("-id", "--id", dest="id", help="content id ")
-arguments.add_argument("-o", "--quality", dest="res", help="quality") 
-arguments.add_argument("-q", "--output", dest="output", help="file")
+arguments.add_argument("-q", "--quality", dest="res", help="quality") 
+arguments.add_argument("-o", "--output", dest="output", help="file")
 args = arguments.parse_args()
 VideoID = args.id
 fileName = args.res
@@ -54,14 +54,14 @@ def get_metadata(VideoID):
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
     os.rename(f'chunklist [chunklist].mp4', accountss)
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -q %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -q %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
+    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
 
 def merge_content():
 	divider()
