@@ -159,8 +159,8 @@ def trackname():
 def rclone():
     print("Aagu Ra Nakka Pumka")
     encodespath =  ENCODES + '/' + f"'{fileName}'"
-    subprocess.run(['rclone','move', encodespath,'Rose:/jio'])
-    print("SHAKTHI HERO THELUSA THAMMUDU NEEKU https://drive.google.com/drive/folders/1HGFtdd5xZ4Obo11HCaphApRmqmFTbp4A?usp=sharing") 
+    subprocess.run(['rclone','move', encodespath,'wanda:troopdrive/jio'])
+    print("SHAKTHI HERO THELUSA THAMMUDU NEEKU") 
 
 
 m3u8_url = get_m3u8(manifest)
