@@ -42,7 +42,7 @@ def get_metadata(VideoID):
     print(url) 
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
-    accounts = ACCOUNT + '/' + f"{fileName}"
+    outputpath = OUTPUT_PATH + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -52,16 +52,14 @@ def get_metadata(VideoID):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'chunklist [chunklist].mp4', accounts)
-    print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
+    os.rename(f'chunklist [chunklist].mp4', outputpath)
     #print ("\nSuccessfully downloaded the stream!") 
 
 def subtitles():
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
     print("Downloading Subtitles")
-    os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
+    os.system(f'yt-dlp --write-subs --convert-sub srt --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
 
 def merge_content():
 	divider()
@@ -69,7 +67,7 @@ def merge_content():
 	outputpath = OUTPUT_PATH + '/' + f"{fileName}"
 	print("Merging Files and Processing..")
 	time.sleep(2)
-	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(accounts,OUTPUT_PATH,outputpath))
+	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(outputpath,OUTPUT_PATH,outputpath))
 
 
 
@@ -77,7 +75,7 @@ def trackname():
         outputpath = OUTPUT_PATH + '/' + f"{fileName}"
         encodespath = ENCODES + '/' + f"{fileName}"
         divider()
-        os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -map 0:s -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
+        os.system('ffmpeg -i %s -hide_banner -map 0:v -map 0:a -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -codec copy %s/thelidhu.mp4 && mv %s/thelidhu.mp4 %s'%(outputpath,OUTPUT_PATH,OUTPUT_PATH,encodespath))
 
 
 def rclone():
@@ -89,6 +87,5 @@ def rclone():
 
 get_metadata(VideoID)
 divider()
-merge_content()
 trackname()
 rclone()
