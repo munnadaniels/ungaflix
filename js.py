@@ -68,7 +68,7 @@ def merge_content():
 	outputpath = OUTPUT_PATH + '/' + f"{fileName}"
 	print("Merging Files and Processing..")
 	time.sleep(2)
-	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(accountss,OUTPUT_PATH,outputpath))
+	os.system('ffmpeg -i %s -i %s/decrypted_subs.eng.srt -preset ultrafast -hide_banner -c:v copy -c:a copy -c:s copy %s'%(accounts,OUTPUT_PATH,outputpath))
 
 
 
@@ -88,7 +88,6 @@ def rclone():
 
 get_metadata(VideoID)
 divider()
-subtitles()
 merge_content()
 trackname()
 rclone()
