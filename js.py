@@ -42,7 +42,7 @@ def get_metadata(VideoID):
     print(url) 
     test = input ('Enter thumb: ')
     m3u8 = First + test + Second
-    accountss = ACCOUNT + '/' + f"{fileName}"
+    accounts = ACCOUNT + '/' + f"{fileName}"
     print(f'link: {m3u8}') 
     print ("Shakthi Hero Ikkada")
     os.system('yt-dlp --external-downloader aria2c --no-warnings --allow-unplayable-formats --no-check-certificate -F "%s"'%m3u8)
@@ -52,7 +52,7 @@ def get_metadata(VideoID):
            AUDIO_ID = "ba"
     divider()
     os.system(f'yt-dlp --no-warnings --external-downloader aria2c --allow-unplayable-formats --user-agent "JioOnDemand/1.5.2.1 (Linux;Android 4.4.2)" -f {VIDEO_ID} "{m3u8}"')
-    os.rename(f'chunklist [chunklist].mp4', accountss)
+    os.rename(f'chunklist [chunklist].mp4', accounts)
     print("Downloading Subtitles")
     os.system(f'yt-dlp --write-subs --convert-sub srt --sub-lang en --skip-download --external-downloader aria2c --verbose --allow-u "%s" -o %s/decrypted_subs'%(m3u8,OUTPUT_PATH))
     #print ("\nSuccessfully downloaded the stream!") 
