@@ -96,7 +96,7 @@ def merge_content():
 def trackname():
         divider()
         FILENAME= str(args.output)
-        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s? -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
+        os.system('ffmpeg -i %s/%s -hide_banner -map 0:v -map 0:a -map 0:s -metadata title="TroopOriginals" -metadata:s:v title="TroopOriginals" -metadata:s:a title="TroopOriginals" -metadata:s:s title="TroopOriginals" -codec copy %s/thelidhu.mkv && mv %s/thelidhu.mkv %s/%s'%(OUTPUT_PATH,FILENAME,OUTPUT_PATH,OUTPUT_PATH,ENCODES,FILENAME))
 
 def watermark():
         FILENAME= str(args.output)
