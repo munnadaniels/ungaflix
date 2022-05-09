@@ -62,9 +62,6 @@ RUN curl -L https://github.com/jaskaranSM/drivedlgo/releases/download/1.5/drived
 #ngrok
 RUN aria2c https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ngrok-stable-linux-amd64.zip && mv ngrok /usr/bin/ && chmod +x /usr/bin/ngrok
 
-#install rmega
-RUN gem install rmega
-
 # Copies config(if it exists)
 COPY . .
 
@@ -79,6 +76,5 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN dpkg --add-architecture i386 && apt-get update && apt-get -y dist-upgrade
-
 RUN chmod u+x /usr/src/app/bin/tools/mp4dump && chmod u+x /usr/src/app/bin/tools/mp4decrypt && chmod u+x /usr/src/app/bin/tools/mkvmerge && chmod u+x /usr/src/app/bin/tools/mediainfo && chmod u+x mp4decrypt/mp4decrypt
 CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon on;' && cd /usr/src/app && mkdir Downloads && bash start.sh
