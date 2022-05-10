@@ -26,12 +26,6 @@
   "bugs": {
     "url": "https://github.com/botgram/shell-bot/issues"
   },
-  "dependencies": {
-  "mime": ">=2.0.3"
-}
-"devDependencies": {
-  "mime": ">=2.0.3"
-},
   "repository": {
     "type": "git",
     "url": "https://github.com/botgram/shell-bot.git"
