@@ -1,1 +1,1 @@
-{ "authToken": "5100078702:AAHveHDTRCubIg-ALCm93QDKeVANF1V2BWs", "owner": 1807485738}
+import os w = open('config.json', 'w+')w.write('{')w.write('\n')w.write(' "authToken": "'+os.getenv('BOT_TOKEN')+'",')w.write('\n')w.write(' "owner": '+os.getenv('OWNER_ID'))w.write('\n')w.write('}')
