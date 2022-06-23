@@ -1,5 +1,4 @@
 import os
-
 w = open('config.json', 'w+')
 w.write('{')
 w.write('\n')
