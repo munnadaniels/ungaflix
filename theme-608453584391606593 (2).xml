@@ -3055,72 +3055,8 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
   </div>
 </b:includable>
         </b:widget>
-        <b:widget cond='data:view.isHomepage' id='HTML4' locked='false' title='Slider' type='HTML' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='content'>&lt;div id=&quot;slider&quot;&gt;
-	&lt;div id=&quot;slides&quot; class=&quot;slides&quot;&gt;
 
-&lt;div class=&quot;item&quot;&gt;
-			&lt;div class=&quot;backdrop&quot; style=&quot;background-image:url(&#39;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfRIs--lHKWod_NJ1t8U6AupYuApR80LgyePdfvAuAgXe-47wmLS-k90a-EzIZRvMIFvg8N4vvFxX9S8Dv_HrvED4DCGPLXnazxYzJx4d4pF-U8lXK4hP-PmAVzkQz7nxuFB4lwbVkDf4iey5U-LRUv6i_jYegIuAzBShKxLecFjqpuXxX3ZRge9Fv/s1280/Skeleton%20Knight%20in%20Another%20World%20sub%20indo%20Cover.jpg&#39;)&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;info&quot;&gt; &lt;a class=&quot;watch&quot; href=&quot;https://anime-la-bt.blogspot.com/2022/04/skeleton-knight-in-another-world.html&quot;&gt;Watch now&lt;/a&gt;
-				&lt;h2&gt;&lt;a href=&quot;https://anime-la-bt.blogspot.com/2022/04/skeleton-knight-in-another-world.html&quot; data-jtitle=&quot;Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu&quot;&gt;Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu&lt;/a&gt;&lt;/h2&gt;
-				&lt;p&gt;One day, a gamer played video games until he fell asleep...and when he woke up, he found himself in the game world&#8212;as a skeleton! Equipped with the powerful weapons and armor of his avatar but stuck with its frightening skeletal appearance, Arc has to find a place for himself in this new, fantastical land. All his hopes for a quiet life are dashed when he crosses paths with a beautiful elven warrior, setting him on a journey full of conflict and adventure.&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-
-
-
-
-&lt;div class=&quot;item&quot;&gt;
-			&lt;div class=&quot;backdrop&quot; style=&quot;background-image:url(&#39;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU0aaOfu8gcL7mEwffhl7InvPxS0PFJc2NKLvXsnAuflVzSM3SWdP-IRrj3ybns5QUPPD-NOr0BC26sl_dBytuTtfZojclooKBxzxfjNuz2uLuQvuGgD8AXR6CmE0_fsBkxPsDsmNeepPCVf9K0bgIv5rGKrJfI_8WxODc-1aK_BmCN8cGWk8fXgga/s1280/shield%20hero%20s2%20sub%20indo.jpg&#39;)&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;info&quot;&gt; &lt;a class=&quot;watch&quot; href=&quot;https://anime-la-bt.blogspot.com/2022/04/the-rising-of-shield-hero-season-2-sub.html&quot;&gt;Watch now&lt;/a&gt;
-				&lt;h2&gt;&lt;a href=&quot;https://anime-la-bt.blogspot.com/2022/04/the-rising-of-shield-hero-season-2-sub.html&quot; data-jtitle=&quot;The Rising of the Shield Hero Season 2&quot;&gt;The Rising of the Shield Hero Season 2&lt;/a&gt;&lt;/h2&gt;
-				&lt;p&gt;Second season of Tate no Yuusha no Nariagari.&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-
-
-
-
-		&lt;div class=&quot;item&quot;&gt;
-			&lt;div class=&quot;backdrop&quot; style=&quot;background-image:url(&#39;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-L7y56KueMpGchRDaiaLqFCvkjU0vht-e6amMG-tLbZUq3-2tz0uygNPmsKLiYz_ztG3BrX-sdex-pi-9-yz5E-ryK7slB5yrc5z-iXYTZr3hG7W44tAslOyYJDmph-WFaMKBrh6Dp149x8quzo1SQH9aH5vdSrm9PMJtN4T1jUHom5F8XgbCuKWa/s1280/kimetsu%20sub%20indo.jpg&#39;)&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;info&quot;&gt; &lt;a class=&quot;watch&quot; href=&quot;/watch/demon-slayer-kimetsu-no-yaiba-entertainment-district-arc-dub.qxkq3&quot;&gt;Watch now&lt;/a&gt;
-				&lt;h2&gt;&lt;a href=&quot;/watch/demon-slayer-kimetsu-no-yaiba-entertainment-district-arc-dub.qxkq3&quot; data-jtitle=&quot;Kimetsu no Yaiba: Yuukaku-hen (Dub)&quot;&gt;Demon Slayer: Kimetsu no Yaiba Entertainment District Arc (Dub)&lt;/a&gt;&lt;/h2&gt;
-				&lt;p&gt;The devastation of the Mugen Train incident still weighs heavily on the members of the Demon Slayer Corps. Despite being given time to recover, life m...&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&quot;item&quot;&gt;
-			&lt;div class=&quot;backdrop&quot; style=&quot;background-image:url(&#39;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKL9X8NvkAlLCsGEmX6HdZJTk4FKxWfDxFs_wIQYm8nWj5q_BiTTqMU6iiXx-RavoEMixSuNJTNbfkEkDW_3yep9obni_cG_KnOaTpxXAJQrCLgpKSyaXky6BnQsGjN4iWyERX7n3oNs6ob54PD8k_9p1PsN8dUXNMnuvE5M2gbLvfGwNdx6FaqSGX/s1280/one%20pice%20sub%20indo.jpg&#39;)&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;info&quot;&gt; &lt;a class=&quot;watch&quot; href=&quot;/watch/one-piece.ov8&quot;&gt;Watch now&lt;/a&gt;
-				&lt;h2&gt;&lt;a href=&quot;/watch/one-piece.ov8&quot; data-jtitle=&quot;One Piece&quot;&gt;One Piece&lt;/a&gt;&lt;/h2&gt;
-				&lt;p&gt;Gol D. Roger was known as the &quot;Pirate King,&quot; the strongest and most infamous being to have sailed the Grand Line. The capture and execution of Roger b...&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&quot;item&quot;&gt;
-			&lt;div class=&quot;backdrop&quot; style=&quot;background-image:url(&#39;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJC9rrSthdP9kEVJ3dqK179fTOJ5dLUlbW6lNnMb5OHUlezDsOoNKCNB1RZMcRyRnzmUVTEbdl-sYOqLSGiRvV5LHJ28WtW68phpjRrtpNGE2eV4vs-FrMXskZFlex_VfY2pDHAzEfd_mZ9Y7Eb59a8eNkwQk0is05itKfodHTX01TmTv16y5i_uaz/s1280/arifurete.jpg&#39;)&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;info&quot;&gt; &lt;a class=&quot;watch&quot; href=&quot;/watch/one-piece.ov8&quot;&gt;Watch now&lt;/a&gt;
-				&lt;h2&gt;&lt;a href=&quot;/watch/one-piece.ov8&quot; data-jtitle=&quot;One Piece&quot;&gt;One Piece&lt;/a&gt;&lt;/h2&gt;
-				&lt;p&gt;Second season of Arifureta Shokugyou de Sekai Saikyou.&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div id=&quot;left-button&quot;&gt;
-		&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon icon-tabler icon-tabler-arrow-narrow-left&quot; width=&quot;44&quot; height=&quot;44&quot; viewbox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;#2c3e50&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
-			&lt;path stroke=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
-			&lt;line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;
-			&lt;line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;9&quot; y2=&quot;16&quot;&gt;&lt;/line&gt;
-			&lt;line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;9&quot; y2=&quot;8&quot;&gt;&lt;/line&gt;
-		&lt;/svg&gt;
-	&lt;/div&gt;
-	&lt;div id=&quot;right-button&quot;&gt;
-		&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon icon-tabler icon-tabler-arrow-narrow-right&quot; width=&quot;44&quot; height=&quot;44&quot; viewbox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;#2c3e50&quot; fill=&quot;none&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
-			&lt;path stroke=&quot;none&quot; d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
-			&lt;line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;
-			&lt;line x1=&quot;15&quot; y1=&quot;16&quot; x2=&quot;19&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;
-			&lt;line x1=&quot;15&quot; y1=&quot;8&quot; x2=&quot;19&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;
-		&lt;/svg&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</b:widget-setting>
+	</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
   <div class='widget-content'>
