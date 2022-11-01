@@ -2636,30 +2636,20 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
                         <label for='ONA'>ONA</label>
                       </li>
                       <li>
-                        <input class='genre' id='Special' type='checkbox' value='Special'/>
-                        <label for='Special'>Special</label>
+                        <input class='genre' id='Specials' type='checkbox' value='Specials'/>
+                        <label for='Specials'>Specials</label>
                       </li>
                     </ul>
                   </div>
-                  <div class='dropdown filter'>
-                    <input class='hidden chk' id='Lang' name='lang' type='checkbox'/>
-                    <label class='dropdown-toggle' data-toggle='dropdown' for='Lang'> Language <span class='value' data-label-placement='true'>All</span> </label>
-                    <ul class='dropdown-menu lg c4'>
-                      <li>
-                        <input class='genre' id='Sub' type='checkbox' value='Sub'/>
-                        <label for='Sub'>Sub</label>
-                      </li>
-                      <li>
-                        <input class='genre' id='Dub' type='checkbox' value='Dub'/>
-                        <label for='Dub'>Dub</label>
-                      </li>
-                    </ul>
-                  </div>
+
                   <div class='dropdown filter'>
                     <input class='hidden chk' id='Country' name='country' type='checkbox'/>
                     <label class='dropdown-toggle' data-toggle='dropdown' for='Country'> Country <span class='value' data-label-placement='true'>All</span> </label>
                     <ul class='dropdown-menu lg c4'>
                       <li>
+			      <input class='genre' id='Japan' type='checkbox' value='Japan'/>
+
+                        <label for='Japan'>Japan</label>
                         <input class='genre' id='Japan' type='checkbox' value='Japan'/>
                         <label for='Japan'>Japan</label>
                       </li>
